@@ -2,8 +2,15 @@
 
 package model
 
-type Book struct {
+type Test struct {
 	ID    string `json:"id"`
 	Name  string `json:"name"`
+	Age   int    `json:"age"`
+	Title string `json:"title"`
+}
+
+type TestInput struct {
+	Name  string `json:"name"`
+	Age   int    `json:"age"`
 	Title string `json:"title"`
 }

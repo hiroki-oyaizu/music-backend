@@ -6,21 +6,26 @@ package graph
 
 import (
 	"context"
-	"react-go-mybackend/graph/model"
+	"fmt"
+
+	"github.com/hiroki-oyaizu/music-backend/graph/model"
 )
 
-// CreateBook is the resolver for the createBook field.
-func (r *mutationResolver) CreateBook(ctx context.Context, name string, title string) (*model.Book, error) {
-	mockBook := &model.Book{
-		ID:    "1",
-		Name:  name,
-		Title: title,
-	}
+// CreateTest is the resolver for the createTest field.
+func (r *mutationResolver) CreateTest(ctx context.Context, input model.TestInput) (*model.Test, error) {
+	panic(fmt.Errorf("not implemented: CreateTest - createTest"))
+}
 
-	return mockBook, nil
+// Tests is the resolver for the tests field.
+func (r *queryResolver) Tests(ctx context.Context) ([]*model.Test, error) {
+	panic(fmt.Errorf("not implemented: Tests - tests"))
 }
 
 // Mutation returns MutationResolver implementation.
 func (r *Resolver) Mutation() MutationResolver { return &mutationResolver{r} }
 
+// Query returns QueryResolver implementation.
+func (r *Resolver) Query() QueryResolver { return &queryResolver{r} }
+
 type mutationResolver struct{ *Resolver }
+type queryResolver struct{ *Resolver }

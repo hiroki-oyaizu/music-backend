@@ -1,9 +1,20 @@
-type Book {
+type Test {
   id: ID!
   name: String!
+  age: Int!
   title: String!
 }
 
 type Mutation {
-  createBook(name: String!, title: String!): Book!
+  createTest(input: TestInput!): Test!
+}
+
+type Query {
+  tests: [Test!]!
+}
+
+input TestInput {
+  name: String!
+  age: Int!
+  title: String!
 }
