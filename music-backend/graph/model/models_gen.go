@@ -2,6 +2,17 @@
 
 package model
 
+type NewTest struct {
+	Name  string `json:"name"`
+	Age   int    `json:"age"`
+	Title string `json:"title"`
+}
+
+type NewTodo struct {
+	Text   string `json:"text"`
+	UserID string `json:"userId"`
+}
+
 type Test struct {
 	ID    string `json:"id"`
 	Name  string `json:"name"`
@@ -9,8 +20,14 @@ type Test struct {
 	Title string `json:"title"`
 }
 
-type TestInput struct {
-	Name  string `json:"name"`
-	Age   int    `json:"age"`
-	Title string `json:"title"`
+type Todo struct {
+	ID   string `json:"id"`
+	Text string `json:"text"`
+	Done bool   `json:"done"`
+	User *User  `json:"user"`
+}
+
+type User struct {
+	ID   string `json:"id"`
+	Name string `json:"name"`
 }

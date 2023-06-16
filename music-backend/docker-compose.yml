@@ -1,0 +1,18 @@
+version: "3"
+services:
+  db:
+    image: mysql:8.0.21
+    platform: linux/amd64
+    ports:
+      - "3308:3306"
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      MYSQL_USER: "webuser"
+      MYSQL_PASSWORD: "webpass"
+      MYSQL_ROOT_PASSWORD: "pass"
+      MYSQL_DATABASE: "music_development"
+    volumes:
+      - db_data:/var/lib/mysql
+
+volumes:
+  db_data:
